@@ -17,4 +17,11 @@
 4- Ayarlar:
       a) Intelije 2 tane plugin eklenecek
          1- Cucumber for Java
-         2- Gherkin Language
+         2- Gherkin
+
+      b) POM.xml -> Project Object Model Ayarları
+               ilgili Lib ler eklenecek (Lib -> library-> hazır eklenen fonk -> Dependency -> gereklilikler)
+               Selenium
+               Cucumber
+               TestNG
+               Cucumber-TestNG(birleştiren lib)
