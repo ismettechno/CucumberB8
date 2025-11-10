@@ -13,3 +13,8 @@
    Pages           -> Page Object Modele uygun class, ve onlara gerekli classlar
    Utilities       -> Driver ve diğer Tool larımız
    Runners         -> Çalıştırıcılar
+
+4- Ayarlar:
+      a) Intelije 2 tane plugin eklenecek
+         1- Cucumber for Java
+         2- Gherkin Language
