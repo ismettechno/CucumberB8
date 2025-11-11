@@ -12,7 +12,7 @@ public class _01_LoginSteps {
     public void navigateToWebSite() {
        GWD.getDriver().get("https://www.google.com/");
 
-       GWD.quitDriver();
+
     }
 
     @When("Enter username and password and click login button")
