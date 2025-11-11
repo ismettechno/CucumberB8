@@ -1,4 +1,17 @@
 package Pages;
 
-public class NavigatePage {
+import Utilities.GWD;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class NavigatePage extends ParentPage{
+
+    public NavigatePage() {
+        PageFactory.initElements(GWD.getDriver(),this);
+    }
+
+    @FindBy(linkText="Newsletter")
+    public WebElement Newsletter;
+
 }
