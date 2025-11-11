@@ -3,12 +3,18 @@ package Pages;
 import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 public class ParentPage {
+
+    public ParentPage() {
+        PageFactory.initElements(GWD.getDriver(),this);
+    }
+
     public WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
 
     public void mySendKeys(WebElement e, String text)
@@ -32,5 +38,6 @@ public class ParentPage {
         JavascriptExecutor js=(JavascriptExecutor) GWD.getDriver();
         js.executeScript("arguments[0].scrollIntoView();", e);
     }
+
 
 }

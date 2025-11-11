@@ -7,9 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class NavigatePage extends ParentPage{
 
-    public NavigatePage() {
-        PageFactory.initElements(GWD.getDriver(),this);
-    }
 
     @FindBy(linkText="Newsletter")
     public WebElement Newsletter;

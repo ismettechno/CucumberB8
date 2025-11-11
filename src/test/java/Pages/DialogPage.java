@@ -10,10 +10,6 @@ import org.testng.Assert;
 
 public class DialogPage extends ParentPage{
 
-    public DialogPage() {
-        PageFactory.initElements(GWD.getDriver(),this);
-    }
-
     @FindBy(xpath="//input[@id='input-email']")
     public WebElement username;
 
