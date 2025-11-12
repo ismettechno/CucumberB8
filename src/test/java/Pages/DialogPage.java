@@ -34,6 +34,12 @@ public class DialogPage extends ParentPage{
     @FindBy(css="[type='submit']")
     public WebElement submitBtn;
 
+    @FindBy(id="input-firstname")
+    public WebElement inputFirstname;
+
+    @FindBy(id="input-lastname")
+    public WebElement inputLastname;
+
     public void verifyTitleContainsText(String text){
         wait.until(ExpectedConditions.titleContains(text));
         Assert.assertTrue(GWD.getDriver().getTitle().toLowerCase().contains(text.toLowerCase()), "Login olunamadı");
