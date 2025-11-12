@@ -11,4 +11,7 @@ public class NavigatePage extends ParentPage{
     @FindBy(linkText="Newsletter")
     public WebElement Newsletter;
 
+    @FindBy(linkText="Contact Us")
+    public WebElement ContactUs;
+
 }

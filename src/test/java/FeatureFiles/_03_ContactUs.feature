@@ -6,4 +6,4 @@ Feature: Contact Us Functionality
     Then User should login successfully
     And Navigate to ContactUs
     When Send a message and click to Submit
-    Then Success message should be displayed
+    Then Success message should be in URL
