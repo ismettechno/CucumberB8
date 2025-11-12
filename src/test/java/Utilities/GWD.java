@@ -28,8 +28,10 @@ public class GWD {
             throw new RuntimeException(e);
         }
 
-
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+            driver=null;
+        }
     }
 
 
