@@ -25,4 +25,10 @@ public class _03_ContactUs {
     public void successMessageShouldBeInURL() {
         dp.verifyURLContainsText("success");
     }
+
+    @When("Send a message as {string} and click to Submit")
+    public void sendAMessageAsAndClickToSubmit(String mesaj) {
+        dp.mySendKeys(dp.enquiryArea, mesaj);
+        dp.myClick(dp.submitBtn);
+    }
 }
