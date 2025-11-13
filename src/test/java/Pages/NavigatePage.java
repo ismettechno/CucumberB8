@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class NavigatePage extends ParentPage{
 
-
     @FindBy(linkText="Newsletter")
     public WebElement Newsletter;
 
@@ -16,5 +15,15 @@ public class NavigatePage extends ParentPage{
 
     @FindBy(linkText="Edit Account")
     public WebElement EditAccount;
+
+    public WebElement getWebElement(String strElement){
+        switch (strElement){
+            case "EditAccount" : return this.EditAccount;
+            case "ContactUs" : return this.ContactUs;
+            case "Newsletter" : return this.Newsletter;
+            default : return null;
+        }
+    }
+
 
 }

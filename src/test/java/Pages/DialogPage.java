@@ -55,4 +55,17 @@ public class DialogPage extends ParentPage{
         wait.until(ExpectedConditions.urlContains(text));
         Assert.assertTrue(GWD.getDriver().getCurrentUrl().toLowerCase().contains(text.toLowerCase()), "Login olunamadı");
     }
+
+    public WebElement getWebElement(String strElement){
+        switch (strElement){
+            case "inputFirstname" : return this.inputFirstname;
+            case "inputLastname" : return this.inputLastname;
+            case "cntBtn" : return this.cntBtn;
+            case "enquiryArea" : return this.enquiryArea;
+            case "submitBtn" : return this.submitBtn;
+            default : return null;
+        }
+    }
+
+
 }
