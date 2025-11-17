@@ -40,6 +40,34 @@ public class DialogPage extends ParentPage{
     @FindBy(id="input-lastname")
     public WebElement inputLastname;
 
+    @FindBy(id = "input-company")
+    public WebElement inputCompany;
+
+    @FindBy(id = "input-address-1")
+    public WebElement inputAddress1;
+
+    @FindBy(id = "input-address-2")
+    public WebElement inputAddress2;
+
+    @FindBy(id = "input-city")
+    public WebElement inputCity;
+
+    @FindBy(id = "input-postcode")
+    public WebElement inputPostcode;
+
+    @FindBy(id = "input-country")
+    public WebElement inputCountry;
+
+    @FindBy(id = "input-zone")
+    public WebElement inputregionState;
+
+    @FindBy(xpath = "//input[@value='0']")
+    public WebElement defaultAddress;
+
+    @FindBy(xpath = "(//a[text()='Delete'])[2]")
+    public WebElement deteleBtn;
+
+
     public void verifyTitleContainsText(String text){
         wait.until(ExpectedConditions.titleContains(text));
         Assert.assertTrue(GWD.getDriver().getTitle().toLowerCase().contains(text.toLowerCase()), "Login olunamadı");
@@ -64,6 +92,13 @@ public class DialogPage extends ParentPage{
             case "enquiryArea" : return this.enquiryArea;
             case "submitBtn" : return this.submitBtn;
             case "subYes" : return this.subYes;
+            case "inputCompany":return this.inputCompany;
+            case "inputAddress1":return this.inputAddress1;
+            case "inputAddress2" :return this.inputAddress2;
+            case "inputCity" : return this.inputCity;
+            case "inputPostcode" :return this.inputPostcode;
+            case "inputCountry":return this.inputCountry;
+            case "inputregionState":return this.inputregionState;
             default : return null;
         }
     }

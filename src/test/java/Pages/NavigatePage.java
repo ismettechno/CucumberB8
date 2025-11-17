@@ -16,11 +16,20 @@ public class NavigatePage extends ParentPage{
     @FindBy(linkText="Edit Account")
     public WebElement EditAccount;
 
+    @FindBy(linkText ="Address Book" )
+    public WebElement AddressBook;
+
+    @FindBy(linkText = "New Address")
+    public WebElement NewAddress;
+
     public WebElement getWebElement(String strElement){
         switch (strElement){
             case "EditAccount" : return this.EditAccount;
             case "ContactUs" : return this.ContactUs;
             case "Newsletter" : return this.Newsletter;
+            case "AddressBook" :return this.AddressBook;
+            case "NewAddress": return this.NewAddress;
+
             default : return null;
         }
     }
