@@ -9,6 +9,7 @@ import io.cucumber.testng.CucumberOptions;
     glue = {"StepDefinitions"}    // Step definitions ın klasörü adı yazılıyor.
 )
 public class _01_TestRunner extends AbstractTestNGCucumberTests {
+    //Bu class tiplerine Runner Class lar denir.
 }
 
 // features pathlerinin alınması : ilgili feature dosyasının üzerinde
