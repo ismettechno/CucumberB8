@@ -9,4 +9,5 @@ https://www.youtube.com/watch?v=aU5daBh7YVA
             <version>1.10.1</version>
         </dependency>
 
-2-
+2- Runner Class aşağıdaki plugin eklenir
+   plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
