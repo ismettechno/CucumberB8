@@ -11,3 +11,9 @@ https://www.youtube.com/watch?v=aU5daBh7YVA
 
 2- Runner Class aşağıdaki plugin eklenir
    plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+
+3- src/test/resources/extent.properties   dosyası resources klasörünün
+      altına açılarak aşağıdaki 2 satır eklendi.
+
+      extent.reporter.spark.start=true
+      extent.reporter.spark.out=test-output/SparkReport/Spark.html
