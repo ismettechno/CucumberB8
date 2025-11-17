@@ -5,6 +5,7 @@ Feature: DataTable Functionality
     When Enter username and password and click login button
     Then User should login successfully
 
+  @Regression
   Scenario: Edit Account DataTable
 
     And Click on Element Navigate

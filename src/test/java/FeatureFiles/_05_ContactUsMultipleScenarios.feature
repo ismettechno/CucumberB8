@@ -5,6 +5,7 @@ Feature: Multi Scenario Parameter
     When Enter username and password and click login button
     Then User should login successfully
 
+  @SmokeTest
   Scenario: Send a message
     And Navigate to ContactUs
     When Send a message and click to Submit
