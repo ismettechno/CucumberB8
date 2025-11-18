@@ -1,0 +1,41 @@
+
+
+Bilgisayar gelişimi
+i3,i5,i7,i9
+
+80 86 -> ilk microişlemci
+80 286 -> 286 işlemci
+80 386 -> 386 işlemci
+80 486 -> 486 işlemci
+80 586 -> pentium işlemci 4Ghz işlemci hızı
+ısı ve toz
+
+mikroişlemcinin içinde bir cok birim , esas işi yapan çekirdek bir kısım olan
+Aritmetic Logic Birim (ALU-çekirdek)  sayısını artırdılar, yani çekirdek(core)
+artırdılar.
+İ3 2 core-> bu aynı anda 2 iş yapabilir
+i3 4 core-> bu aynı anda 4 yapıyor
+i7 8 core-> bu aynı anda 8 iş yapabiliyor
+
+Paralel iş yapma -> her bir iş akışına Pipe Line
+her iş hattına Thread(iş hattı)
+
+Thread.Sleep(5000) -> bu hattı 5 sn beklet
+
+cucumber da driver STATİC olmak zorunda
+Her bir Thread e özel static tanımlayabilecek bir yöntem bulalım
+
+public static ThreadLocal<WebDriver> listDriver;  list gibi düşüneceğiz
+
+listDriver.get() -> bu hattki değişkeni almış driver ı almış oluyoruz
+listDriver.set(driver) -> bu hatta bu driver ı ver diyeceğiz
+
+
+
+
+
+
+
+
+
+
