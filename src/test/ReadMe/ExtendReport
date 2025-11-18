@@ -47,3 +47,32 @@ https://www.youtube.com/watch?v=aU5daBh7YVA
                            byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
                            senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
                        }
+
+ 7- Raporun sonuna istediğimiz açıklamalrı da ekleyebilirzi istersek
+     Runner class içine @AfterClass metodu açarak aşağıdaki şekilde ekleyebiliriz.
+
+     public class _07_ExtendReport extends AbstractTestNGCucumberTests {
+
+
+              @AfterClass
+              public  static void writeExtendReport()
+              {
+                      ExtentService.getInstance().setSystemInfo("Windows User Name", System.getProperty("user.name"));
+                      ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));
+                      ExtentService.getInstance().setSystemInfo("User Name", "İsmet Temur");
+                      ExtentService.getInstance().setSystemInfo("Application Name", "Campus");
+                      ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
+                      ExtentService.getInstance().setSystemInfo("Department", "QA");
+                      ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
+                      ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
+                      ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
+                      ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
+              }
+      }
+
+ 8-  PDF Report için gerekli işlem
+     extends.properties e aşağıdaki bölüm eklendi
+
+                 #PDF Report
+                 extent.reporter.pdf.start=true
+                 extent.reporter.pdf.out=PdfReport.pdf
