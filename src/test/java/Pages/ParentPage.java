@@ -15,7 +15,7 @@ public class ParentPage {
         PageFactory.initElements(GWD.getDriver(),this);
     }
 
-    public WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+    public WebDriverWait wait=new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(5));
 
     public void mySendKeys(WebElement e, String text)
     {

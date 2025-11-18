@@ -30,3 +30,20 @@ https://www.youtube.com/watch?v=aU5daBh7YVA
           #FolderName
           basefolder.name=Test Reports/TestReport
           basefolder.datetimepattern=d-MMM-YY HH.mm.ss
+
+
+6- Rapora Screenshot eklenmesi için
+   a) extends.properties e aşağıdaki bölüm eklendi
+
+               #screenshot folder and src settings
+               screenshot.dir=test-output/screenshots/
+               screenshot.rel.path=../screenshots/
+
+   b)  Hooks a aşağıdaki eklendi
+       public void after(Scenario senaryo)
+
+                      if (senaryo.isFailed()){
+                           TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
+                           byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
+                           senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
+                       }
