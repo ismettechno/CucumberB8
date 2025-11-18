@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="mySuit" parallel="tests" thread-count="2">
+    <test name="test1">
+        <classes>
+            <class name="Runners._04_TestRunnerSmoke"></class>
+        </classes>
+    </test>
+
+    <test name="test2">
+        <classes>
+            <class name="Runners._01_TestRunner"></class>
+        </classes>
+    </test>
+
+</suite>
