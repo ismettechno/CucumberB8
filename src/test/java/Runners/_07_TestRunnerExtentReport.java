@@ -17,10 +17,10 @@ public class _07_TestRunnerExtentReport extends AbstractTestNGCucumberTests {
     @AfterClass
     public  static void writeExtendReport()
     {
-        ExtentService.getInstance().setSystemInfo("Windows User Name", System.getProperty("user.name"));
+        ExtentService.getInstance().setSystemInfo("Windows User Name", "Easy Learn Academy");
         ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));
         ExtentService.getInstance().setSystemInfo("User Name", "İsmet Temur");
-        ExtentService.getInstance().setSystemInfo("Application Name", "Campus");
+        ExtentService.getInstance().setSystemInfo("Application Name", "Opencart");
         ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
         ExtentService.getInstance().setSystemInfo("Department", "QA");
         ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
