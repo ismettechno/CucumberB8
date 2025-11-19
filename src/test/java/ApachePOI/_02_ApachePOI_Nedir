@@ -1,0 +1,11 @@
+   Interview SORUSU
+1- Excelden veri okumasını nasıl yaparsınız ?
+   ApachePOI ile yapıyorum.
+
+2- ApachePOI nedir ?
+   Excelden veri okuma-yazma aracı, kütüphanesi
+
+3- ApachePOI yi nasıl kullanıyorsun ?
+   Kitap -> sayfa1,sayfa2 -> satırlar -> hücreler
+   FileInputStream(Dosyayı aç) ->  WorkBook -> sheet -> row -> cell
+
