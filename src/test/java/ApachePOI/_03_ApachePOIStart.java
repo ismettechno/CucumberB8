@@ -10,14 +10,14 @@ public class _03_ApachePOIStart {
        String path="src/test/java/ApachePOI/Resource/ApacheExcel2.xlsx";
 
         //Java dosya okuma nesnesine bu yolu vererek bağlantı kuruyorum
-        FileInputStream dosyaOkumaBaglantisi=new FileInputStream(path);
+        FileInputStream dosyaOkumaBaglantisi=new FileInputStream(path);  // tıklattım
 
         //Dosya okuma işlemcisi üzerinden Çalışma Kitabını alıyorum
         // hafızada workbook u alıp oluşturdu
-        Workbook calismaKitabi= WorkbookFactory.create(dosyaOkumaBaglantisi);
+        Workbook calismaKitabi= WorkbookFactory.create(dosyaOkumaBaglantisi);  // excelin içi karşımda
 
         //istediğim isimdeki çalışma sayfasını alıyorum
-        Sheet calisamaSayfasi= calismaKitabi.getSheet("Sheet1");
+        Sheet calisamaSayfasi= calismaKitabi.getSheet("Sheet1");  // istediği sayfaya tıklattım açtım
 
         //istenen satırı alıyorum
         Row satir= calisamaSayfasi.getRow(0);  // 0.Satır a ulaştım
