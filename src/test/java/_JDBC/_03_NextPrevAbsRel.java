@@ -34,6 +34,12 @@ public class _03_NextPrevAbsRel extends JDBCParent{
         rs.relative(2);  // bulunduğun yerden sayarak 2.satıra gider
         System.out.println("6.Satır = " + rs.getString("name")); // German
 
+        rs.absolute(-2); // sondan 2.ye git
+        System.out.println("Sondan 2. = " + rs.getString("name")); //French
+
+        rs.relative(-1); // bulunduğun yerdem 1 geri git
+        System.out.println("bulunduğun yerdem 1 geri = " + rs.getString("name")); //Mandarin
+
         DBConnectionClose();
     }
 
