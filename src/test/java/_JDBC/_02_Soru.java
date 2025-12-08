@@ -17,6 +17,10 @@ public class _02_Soru {
         Statement sorguEkrani = baglanti.createStatement();
         ResultSet sonucTablosuGostergesi = sorguEkrani.executeQuery("select * from city");
 
+        while(sonucTablosuGostergesi.next())
+           System.out.println(sonucTablosuGostergesi.getString("city"));
+
+        baglanti.close();
     }
 
 }
