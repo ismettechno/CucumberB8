@@ -27,11 +27,6 @@ public class _04_GetMetaData extends JDBCParent{
             System.out.println();
         }
 
-
-
-
-
-
         DBConnectionClose();
     }
 
