@@ -35,7 +35,7 @@ public class _04_EditAccount {
 
         for(List<String> satir : tablo)
         {
-            np.myClick(np.EditAccount);
+            np.myClick(np.EditAccount);  // kayıt işleminden sonra her döngüde edit ekranı gelmesi için
             dp.mySendKeys(dp.inputFirstname, satir.get(0));
             dp.mySendKeys(dp.inputLastname, satir.get(1));
             dp.myClick(dp.cntBtn);
