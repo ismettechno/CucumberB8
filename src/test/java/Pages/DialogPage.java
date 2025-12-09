@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class DialogPage extends ParentPage{
 
     @FindBy(xpath="//input[@id='input-email']")
@@ -67,6 +69,14 @@ public class DialogPage extends ParentPage{
     @FindBy(xpath = "(//a[text()='Delete'])[2]")
     public WebElement deteleBtn;
 
+    @FindBy(name = "search")
+    public WebElement searchBox;
+
+    @FindBy(css = "[class='btn btn-default btn-lg']")
+    public WebElement srcBtn;
+
+    @FindBy(css = "[class='caption'] a")
+    public List<WebElement> srcNameList;
 
     public void verifyTitleContainsText(String text){
         wait.until(ExpectedConditions.titleContains(text));
@@ -99,6 +109,9 @@ public class DialogPage extends ParentPage{
             case "inputPostcode" :return this.inputPostcode;
             case "inputCountry":return this.inputCountry;
             case "inputregionState":return this.inputregionState;
+            case "searchBox":return this.searchBox;
+            case "srcBtn":return this.srcBtn;
+
             default : return null;
         }
     }

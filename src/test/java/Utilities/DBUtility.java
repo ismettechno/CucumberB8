@@ -12,7 +12,7 @@ public class DBUtility {
 
         try {
             ResultSet rs = sorguEkrani.executeQuery(sorguSql);
-            ResultSetMetaData rsmd = rs.getMetaData();
+            ResultSetMetaData rsmd = rs.getMetaData(); //kolon sayısı
 
             while (rs.next()) {
                 ArrayList<String> satir = new ArrayList<>();
