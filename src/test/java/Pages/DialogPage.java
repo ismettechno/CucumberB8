@@ -78,6 +78,12 @@ public class DialogPage extends ParentPage{
     @FindBy(css = "[class='caption'] a")
     public List<WebElement> srcNameList;
 
+    @FindBy(id = "details-button")
+    public WebElement detailsButton;
+
+    @FindBy(id = "proceed-link")
+    public WebElement proceedLink;
+
     public void verifyTitleContainsText(String text){
         wait.until(ExpectedConditions.titleContains(text));
         Assert.assertTrue(GWD.getDriver().getTitle().toLowerCase().contains(text.toLowerCase()), "Login olunamadı");
@@ -111,6 +117,8 @@ public class DialogPage extends ParentPage{
             case "inputregionState":return this.inputregionState;
             case "searchBox":return this.searchBox;
             case "srcBtn":return this.srcBtn;
+            case "detailsButton":return this.detailsButton;
+            case "proceedLink":return this.proceedLink;
 
             default : return null;
         }
