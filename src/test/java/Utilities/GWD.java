@@ -5,18 +5,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.tracing.opentelemetry.SeleniumSpanExporter;
 
 import java.time.Duration;
 import java.util.Locale;
 
 public class GWD {
-    private static ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>();
-    public static ThreadLocal<String> threadBrowserName=new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
+    public static ThreadLocal<String> threadBrowserName = new ThreadLocal<>();
 
     // threadDriver.get() bu hattaki driver
 
-    public static WebDriver getDriver()
-    {
+    public static WebDriver getDriver() {
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
 
@@ -26,18 +26,26 @@ public class GWD {
 
         if (threadDriver.get() == null) { //bir kere oluştursun
 
-           switch (threadBrowserName.get())
-           {
-               case "edge" : threadDriver.set(new EdgeDriver()); break;
-               case "firefox" : threadDriver.set(new FirefoxDriver()); break;
-               default:
+            switch (threadBrowserName.get()) {
+                case "edge":
+                    threadDriver.set(new EdgeDriver());
+                    break;
+                case "firefox":
+                    threadDriver.set(new FirefoxDriver());
+                    break;
+                default:
 
-                   //aşağıdaki 2 satır jenkins
-                   ChromeOptions ChromeOptions = new ChromeOptions();
-                   ChromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    if (isRunningOnJenkins()) {
+                        //aşağıdaki 2 satır jenkins
+                        ChromeOptions ChromeOptions = new ChromeOptions();
+                        ChromeOptions.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
 
-                   threadDriver.set(new ChromeDriver(ChromeOptions));
-           }
+                        threadDriver.set(new ChromeDriver(ChromeOptions));
+                    } else {
+                        threadDriver.set(new ChromeDriver());
+                    }
+
+            }
 
             threadDriver.get().manage().window().maximize(); // Ekranı max yapıyor.
             threadDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 20 sn mühlet: sayfayı yükleme mühlet
@@ -46,8 +54,12 @@ public class GWD {
         return threadDriver.get();
     }
 
-    public static void quitDriver()
-    {
+    public static boolean isRunningOnJenkins() {
+        String jenkinsHome = System.getenv("JENKINS_HOME");
+        return jenkinsHome != null && !jenkinsHome.isEmpty();
+    }
+
+    public static void quitDriver() {
         //test sonucu ekranı bir miktar beklesin diye
         try {
             Thread.sleep(5000);
@@ -58,13 +70,11 @@ public class GWD {
         if (threadDriver.get() != null) {
             threadDriver.get().quit(); // tarayıcı kapat, hafızada(thread) değişken duruyor
 
-            WebDriver driver=threadDriver.get(); // thread de ki değişkeni al
-            driver=null; // değişkene NULL değerini ata
+            WebDriver driver = threadDriver.get(); // thread de ki değişkeni al
+            driver = null; // değişkene NULL değerini ata
             threadDriver.set(driver); // thread e bu değişkeni set et
         }
     }
-
-
 
 
 }
